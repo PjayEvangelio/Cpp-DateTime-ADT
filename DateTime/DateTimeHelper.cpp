@@ -1,4 +1,8 @@
+#include <iostream>
+#include "DateTime.h"
 #include "DateTimeHelper.h"
+
+using namespace std;
 
 // Helper Function: handles hour, day, and month overflows, including leap years.
 void DateTimeHelper::adjustDateTime(DateTime& dt)
@@ -62,6 +66,8 @@ void DateTimeHelper::modifyDateTime(DateTime& dt)
     dt.setHour(0);
     dt.setMinute(120);
     adjustDateTime(dt);
+
+    cout << "Object values modified by a Function:\n";
 }
 
 // Helper Function: returns a new DateTime object

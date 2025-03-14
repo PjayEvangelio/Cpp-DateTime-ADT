@@ -11,7 +11,6 @@ int main()
     {
         cout << "\n========== TEST CASE 1: Default Constructor ==========\n";
         DateTime myBirthday;
-        cout << "Object created using Default Constructor:\n";
         DateTimeLogger::display(myBirthday);
         cout << "Active objects: " << DateTime::getActiveCount() << endl;
     }
@@ -20,9 +19,7 @@ int main()
     {
         cout << "\n========== TEST CASE 2: Copy Constructor ==========\n";
         DateTime myBirthday;
-        cout << "Object created using Default Constructor:\n";
         DateTimeLogger::display(myBirthday);
-        cout << "Object created using Copy Constructor:\n";
         DateTime yourBirthday(myBirthday);
         DateTimeLogger::display(yourBirthday);
         cout << "Active objects: " << DateTime::getActiveCount() << endl;
@@ -32,16 +29,13 @@ int main()
     {
         cout << "\n========== TEST CASE 3: Copy Assignment Operator ==========\n";
         DateTime myBirthday;
-        cout << "Object created using Default Constructor:\n";
         DateTimeLogger::display(myBirthday);
         DateTime yourBirthday(myBirthday);
-        cout << "Object created using Copy Constructor:\n";
         DateTimeLogger::display(yourBirthday);
         DateTime randomDate(5, 5, 2005, 8, 45);
-        cout << "Before Copy Assignment Operator:\n";
         DateTimeLogger::display(randomDate);
         randomDate = yourBirthday;
-        cout << "After Copy Assignment Operator: (Copied from Object ID 5)\n";
+        cout << "Object updated using Copy Assignment Operator (Copied values from Object ID 5)\n";
         DateTimeLogger::display(randomDate);
         cout << "Active objects: " << DateTime::getActiveCount() << endl;
     }
@@ -50,7 +44,6 @@ int main()
     {
         cout << "\n========== TEST CASE 4: Explicit Constructor ==========\n";
         DateTime explicitDate(6, 3, 2025, 11, 49);
-        cout << "Object created using Explicit Constructor:\n";
         DateTimeLogger::display(explicitDate);
         cout << "Active objects: " << DateTime::getActiveCount() << endl;
     }
@@ -59,14 +52,13 @@ int main()
     {
         cout << "\n========== TEST CASE 5: Using Setters ==========\n";
         DateTime explicitDate(6, 3, 2025, 11, 49);
-        cout << "Object created using Explicit Constructor:\n";
         DateTimeLogger::display(explicitDate);
         explicitDate.setDay(16);
         explicitDate.setMonth(12);
         explicitDate.setYear(1999);
         explicitDate.setHour(13);
         explicitDate.setMinute(1);
-        cout << "After setting values using Setters:\n";
+        cout << "Object values updated using Setters:\n";
         DateTimeLogger::display(explicitDate);
         cout << "Active objects: " << DateTime::getActiveCount() << endl;
     }
@@ -85,10 +77,8 @@ int main()
     {
         cout << "\n========== TEST CASE 7: Passing Object to a Function ==========\n";
         DateTime explicitDate(6, 3, 2025, 11, 49);
-        cout << "Before Modification via Function:\n";
         DateTimeLogger::display(explicitDate);
         DateTimeHelper::modifyDateTime(explicitDate);
-        cout << "After Modification via Function:\n";
         DateTimeLogger::display(explicitDate);
         cout << "Active objects: " << DateTime::getActiveCount() << endl;
     }

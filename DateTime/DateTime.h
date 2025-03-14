@@ -11,17 +11,21 @@ public:
     ~DateTime();
 
     int getDay() const;
-    int getMonth() const;
-    int getYear() const;
-    int getHour() const;
-    int getMinute() const;
-    int getId() const;
-
     void setDay(int newDay);
+
+    int getMonth() const;
     void setMonth(int newMonth);
+
+    int getYear() const;
     void setYear(int newYear);
+
+    int getHour() const;
     void setHour(int newHour);
+
+    int getMinute() const;
     void setMinute(int newMinute);
+
+    int getId() const;
 
     static int getActiveCount();
 

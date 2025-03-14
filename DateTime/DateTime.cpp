@@ -1,5 +1,8 @@
+#include <iostream>
 #include "DateTime.h"
 #include "DateTimeHelper.h"
+
+using namespace std;
 
 // Initialize static members
 int DateTime::_nextId = 1;
@@ -15,6 +18,8 @@ DateTime::DateTime()
     _minute = 30;
     _id = _nextId++;
     _count++;
+
+    cout << "Object created using Default Constructor:\n";
 }
 
 // Copy Constructor creates a DateTime object by copying an existing object
@@ -27,6 +32,8 @@ DateTime::DateTime(const DateTime& original)
     _minute = original._minute;
     _id = _nextId++;
     _count++;
+
+    cout << "Object created using Copy Constructor:\n";
 }
 
 // Copy Assignment Operator overrides values of an existing DateTime object by copying values from another object
@@ -55,18 +62,25 @@ DateTime::DateTime(int day, int month, int year, int hour, int minute)
     _count++;
 
     DateTimeHelper::adjustDateTime(*this);
+    cout << "Object created using Explicit Constructor:\n";
 }
 
 // Destructor destroys a DateTime object
 DateTime::~DateTime()
 {
     _count--;
+    cout << "Object ID " << _id << " destroyed!" << endl;
 }
 
-// Getters for accessing private variables
+// Getters & Setters for accessing and setting private variables
 int DateTime::getDay() const
 {
     return _day;
+}
+
+void DateTime::setDay(int newDay)
+{
+    _day = newDay;
 }
 
 int DateTime::getMonth() const
@@ -74,9 +88,19 @@ int DateTime::getMonth() const
     return _month;
 }
 
+void DateTime::setMonth(int newMonth)
+{
+    _month = newMonth;
+}
+
 int DateTime::getYear() const
 {
     return _year;
+}
+
+void DateTime::setYear(int newYear)
+{
+    _year = newYear;
 }
 
 int DateTime::getHour() const
@@ -84,9 +108,19 @@ int DateTime::getHour() const
     return _hour;
 }
 
+void DateTime::setHour(int newHour)
+{
+    _hour = newHour;
+}
+
 int DateTime::getMinute() const
 {
     return _minute;
+}
+
+void DateTime::setMinute(int newMinute)
+{
+    _minute = newMinute;
 }
 
 int DateTime::getId() const
@@ -97,30 +131,4 @@ int DateTime::getId() const
 int DateTime::getActiveCount()
 {
     return _count;
-}
-
-// Setters for setting values of private variables
-void DateTime::setDay(int newDay)
-{
-    _day = newDay;
-}
-
-void DateTime::setMonth(int newMonth)
-{
-    _month = newMonth;
-}
-
-void DateTime::setYear(int newYear)
-{
-    _year = newYear;
-}
-
-void DateTime::setHour(int newHour)
-{
-    _hour = newHour;
-}
-
-void DateTime::setMinute(int newMinute)
-{
-    _minute = newMinute;
 }

@@ -1,8 +1,7 @@
 #ifndef DATETIMELOGGER_H
 #define DATETIMELOGGER_H
 
-#include <iostream>
-#include "DateTime.h"
+class DateTime;
 
 class DateTimeLogger
 {

@@ -1,7 +1,7 @@
 #ifndef DATETIMEHELPER_H
 #define DATETIMEHELPER_H
 
-#include "DateTime.h"
+class DateTime;
 
 class DateTimeHelper
 {
